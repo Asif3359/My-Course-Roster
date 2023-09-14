@@ -1,7 +1,7 @@
 import React from 'react';
 import ChartItem from './Chart/ChartItem';
 
-const Chart = ({chartCourses}) => {
+const Chart = ({chartCourses, credit, creditPrice}) => {
 
     return (
         <div> 
@@ -14,9 +14,9 @@ const Chart = ({chartCourses}) => {
                 }
             </div>
             <hr />
-            <h1 className='mt-2 mb-2'>Total Credit :</h1>
+            <h1 className='mt-2 mb-2'>Total Credit : {credit}</h1>
             <hr />
-            <h1 className='mt-2 mb-2'>Total Price : </h1>
+            <h1 className='mt-2 mb-2'>Total Price : {creditPrice.toFixed(2)}</h1>
             
         </div>
     );

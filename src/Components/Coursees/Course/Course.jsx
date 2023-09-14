@@ -5,8 +5,8 @@ const Course = ({course, handleSelect}) => {
     return (
         <div className='p-5 mb-4 border-2 rounded-lg'>
             <img className='w-full h-[170px] rounded-lg bg-gray-300' src={cover_image} alt="" />
-            <h1 className='font-semibold mt-2'>{Course_title}</h1>
-            <p className='mt-2 text-sm text-gray-700 font-light'>{Course_Description.slice(10)}</p>
+            <h1 className='font-semibold mt-2'>{Course_title.slice(0,25)}</h1>
+            <p className='mt-2 text-sm text-gray-700 font-light'>{Course_Description.slice(0,60)}</p>
             <div className='flex justify-between items-center mt-2'>
                 <p className='text-gray-700 font-light'>Price $ {Course_price}</p>
                 <span ><FaBookOpen></FaBookOpen></span>
