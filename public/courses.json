@@ -1,0 +1,99 @@
+[
+    {
+      "id": 1,
+      "cover_image": "https://i.ibb.co/kmrTdF8/C-programming.pn",
+      "Course_title": "Introduction to C Programming",
+      "Course_Description": "Learn the fundamentals of programming with this beginner-friendly course.",
+      "Course_price": 49.99,
+      "credit_our": 3
+    },
+    {
+      "id": 2,
+      "cover_image": "https://i.ibb.co/R4x4MZ9/webDeb.jpg",
+      "Course_title": "Web Development Bootcamp",
+      "Course_Description": "Become a web development expert with hands-on projects and coding exercises.",
+      "Course_price": 129.99,
+      "credit_our": 5
+    },
+    {
+      "id": 3,
+      "cover_image": "https://i.ibb.co/9W13Kcp/Data.png",
+      "Course_title": "Data Science Essentials",
+      "Course_Description": "Discover the world of data science and machine learning in this comprehensive course.",
+      "Course_price": 79.99,
+      "credit_our": 4
+    },
+    {
+      "id": 4,
+      "cover_image": "https://i.ibb.co/vdH98B7/types-of-digital-marketing.png",
+      "Course_title": "Digital Marketing Masterclass",
+      "Course_Description": "Learn how to create successful digital marketing campaigns and boost your online presence.",
+      "Course_price": 89.99,
+      "credit_our": 4
+    },
+    {
+      "id": 5,
+      "cover_image": "https://i.ibb.co/2nRQZV1/Graphic-Design-BCG-Banner.png",
+      "Course_title": "Graphic Design Fundamentals",
+      "Course_Description": "Master the basics of graphic design and create stunning visual content.",
+      "Course_price": 59.99,
+      "credit_our": 3
+    },
+    {
+      "id": 6,
+      "cover_image": "https://i.ibb.co/m6sqkc6/app-development-courses.png",
+      "Course_title": "Mobile App Development",
+      "Course_Description": "Build mobile apps for iOS and Android platforms using popular frameworks.",
+      "Course_price": 109.99,
+      "credit_our": 6
+    },
+    {
+      "id": 7,
+      "cover_image": "https://i.ibb.co/Sx5CJ1x/Artificial-Intelligence-Featured-Image.png",
+      "Course_title": "Artificial Intelligence for Beginners",
+      "Course_Description": "Get started with AI and explore its applications in various industries.",
+      "Course_price": 69.99,
+      "credit_our": 4
+    },
+    {
+      "id": 8,
+      "cover_image": "https://i.ibb.co/m8z8B9Z/photograpy.jpg",
+      "Course_title": "Photography Mastery",
+      "Course_Description": "Capture breathtaking photos with expert photography techniques and tips.",
+      "Course_price": 79.99,
+      "credit_our": 3
+    },
+    {
+      "id": 9,
+      "cover_image": "https://i.ibb.co/p0r1xWz/Finance-and-Accounting.jpg",
+      "Course_title": "Business Finance and Accounting",
+      "Course_Description": "Learn financial management and accounting principles for business success.",
+      "Course_price": 69.99,
+      "credit_our": 4
+    },
+    {
+      "id": 10,
+      "cover_image": "https://i.ibb.co/tmRPyKT/ciber.jpg",
+      "Course_title": "Cybersecurity Fundamentals",
+      "Course_Description": "Protect digital assets and networks from cyber threats with this essential course.",
+      "Course_price": 89.99,
+      "credit_our": 4
+    },
+    {
+      "id": 11,
+      "cover_image": "https://i.ibb.co/mCqczkd/Ecommers.jpg",
+      "Course_title": "E-commerce Strategies",
+      "Course_Description": "Learn how to build and grow a successful online store with proven e-commerce strategies.",
+      "Course_price": 59.99,
+      "credit_our": 3
+    },
+    {
+      "id": 12,
+      "cover_image": "https://i.ibb.co/DQFyqBZ/Illustration.jpg",
+      "Course_title": "Digital Illustration and Artistry",
+      "Course_Description": "Create stunning digital art and illustrations with advanced techniques and tools.",
+      "Course_price": 69.99,
+      "credit_our": 3
+    }
+  ]
+  
