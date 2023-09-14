@@ -8,6 +8,7 @@ import Chart from './Components/Chartlist/Chart'
 function App() {
 
   const [courses, setCourses]=useState([]);
+  const [chartCourses, setChartCourses]=useState([]);
 
   useEffect(()=>{
 
@@ -17,8 +18,16 @@ function App() {
   },[]);
   // console.log(courses);
 
-  const handleSelect = () =>{
-     console.log("Ok");
+  const handleSelect = (course,id) =>{
+    
+    const isExist = chartCourses.find( item => item.id === id);
+    if(isExist){
+      return alert("Already Selected");
+    }
+    else{
+      setChartCourses([...chartCourses,course]);
+    }
+     
   }
 
   return (
@@ -30,7 +39,7 @@ function App() {
             <Courses courses={courses} handleSelect={handleSelect} ></Courses>
           </div>
           <div className='w-1/4'>
-            <Chart handleSelect={handleSelect}></Chart>
+            <Chart chartCourses={chartCourses}></Chart>
           </div>
         </div>
       </div>

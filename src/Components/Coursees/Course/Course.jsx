@@ -12,7 +12,7 @@ const Course = ({course, handleSelect}) => {
                 <span ><FaBookOpen></FaBookOpen></span>
                 <p>Credit:{credit_our} hr</p> 
             </div>
-            <button onClick={handleSelect} className='btn btn-primary w-full mt-2 min-h-0 h-fit py-2 '>Select</button>
+            <button onClick={()=>handleSelect(course,id)} className='btn btn-primary w-full mt-2 min-h-0 h-fit py-2 '>Select</button>
         </div>
     );
 };
