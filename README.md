@@ -17,11 +17,13 @@
 
 1. Initializing State Variables:
 
-  const [courses, setCourses]=useState([]);
-  const [chartCourses, setChartCourses]=useState([]);
-  const [credit, setCredit]=useState(0);
-  const [creditPrice, setCreditPrice]=useState(0);
-  const [remainingCreditHr, setRemainingCreditHr]=useState(20);
+    
+    const [courses, setCourses]=useState([]);
+    const [chartCourses, setChartCourses]=useState([]);
+    const [credit, setCredit]=useState(0);
+    const [creditPrice, setCreditPrice]=useState(0);
+    const [remainingCreditHr, setRemainingCreditHr]=useState(20);
+    
 
 
 2. Fetching Data and Updating State:
@@ -41,8 +43,8 @@ useEffect(()=>{
 
 In the handleSelect function, you update the state based on user interactions.
 
-const handleSelect = (course,id) =>{
-
+    
+    const handleSelect = (course,id) =>{
     let totalCredit = course.credit_our ;
     let totalPrice = course.Course_price;
     
@@ -81,12 +83,12 @@ const handleSelect = (course,id) =>{
         setCreditPrice(totalPrice);
         setChartCourses([...chartCourses,course]);
       }
-
-      
+ 
     }
-
-     
   }
+
+
+
 
 4. The handleSelect function in your code is responsible for managing the selection of courses in your course registration application. Here's a brief explanation of how it works:
 1.	Initialization:
