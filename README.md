@@ -16,14 +16,17 @@
 # Discuss how to managed the state of assignment project
 
 1. Initializing State Variables:
+
   const [courses, setCourses]=useState([]);
   const [chartCourses, setChartCourses]=useState([]);
   const [credit, setCredit]=useState(0);
   const [creditPrice, setCreditPrice]=useState(0);
   const [remainingCreditHr, setRemainingCreditHr]=useState(20);
 
+
 2. Fetching Data and Updating State:
 use the useEffect hook to fetch data from a JSON file when the component mounts. Once the data is fetched, you update the courses state variable using setCourses(data). This ensures that your component has access to the course data.
+
 useEffect(()=>{
 
     fetch("/courses.json")
@@ -35,12 +38,13 @@ useEffect(()=>{
 
 
 3. Updating State on User Interactions:
+
 In the handleSelect function, you update the state based on user interactions.
+
 const handleSelect = (course,id) =>{
 
     let totalCredit = course.credit_our ;
     let totalPrice = course.Course_price;
-    // console.log(course.credit_our);
     
     const isExist = chartCourses.find( item => item.id === id);
 
@@ -60,6 +64,7 @@ const handleSelect = (course,id) =>{
         totalPrice = totalPrice + item.Course_price;
  
       });
+
       if((remainingCredit  < 0) || (totalCredit > 20)){
         swal({
           title: "Already Fill your Credit hour",
@@ -68,6 +73,7 @@ const handleSelect = (course,id) =>{
           button: "ok",
         });
       }
+
       else{
         remainingCredit = remainingCredit - totalCredit;
         setRemainingCreditHr(remainingCredit); 
@@ -82,7 +88,7 @@ const handleSelect = (course,id) =>{
      
   }
 
-The handleSelect function in your code is responsible for managing the selection of courses in your course registration application. Here's a brief explanation of how it works:
+4. The handleSelect function in your code is responsible for managing the selection of courses in your course registration application. Here's a brief explanation of how it works:
 1.	Initialization:
 •	totalCredit and totalPrice are initialized with the values from the selected course (course.credit_our and course.Course_price, respectively).
 •	isExist is checked to see if the selected course is already in the chartCourses array. This is done by searching for a course with the same id in the chartCourses array.
