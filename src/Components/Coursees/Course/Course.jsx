@@ -5,7 +5,7 @@ const Course = ({course, handleSelect}) => {
     return (
         <div className='flex flex-col justify-between items-start p-5 mb-4 border-2 rounded-lg gap-2'>
             <img className='w-full h-[170px] rounded-lg bg-gray-300' src={cover_image} alt="" />
-            <h1 className='font-semibold mt-2'>{Course_title}</h1>
+            <h1 className='font-semibold mt-2 text-lg'>{Course_title}</h1>
             <p className='mt-2 text-sm text-gray-700 font-light'>{Course_Description}</p>
             <div className='flex  justify-between items-center gap-5 mt-2  '>
                 <p className='text-gray-700 font-light'>Price $ {Course_price}</p>

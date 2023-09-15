@@ -19,7 +19,7 @@ function App() {
 
   useEffect(()=>{
 
-    fetch("/public/courses.json")
+    fetch("/courses.json")
     .then(res => res.json())
     .then(data => setCourses(data))
   },[]);
@@ -49,8 +49,7 @@ function App() {
         totalPrice = totalPrice + item.Course_price;
  
       });
-      remainingCredit = remainingCredit - totalCredit;
-      if(remainingCredit  < 0){
+      if((remainingCredit  < 0) || (totalCredit > 20)){
         swal({
           title: "Already Fill your Credit hour",
           text: "You can select after your courses finished",
@@ -58,10 +57,11 @@ function App() {
           button: "ok",
         });
       }
-      else{ 
+      else{
+        remainingCredit = remainingCredit - totalCredit;
+        setRemainingCreditHr(remainingCredit); 
         setCredit(totalCredit);
         setCreditPrice(totalPrice);
-        setRemainingCreditHr(remainingCredit);
         setChartCourses([...chartCourses,course]);
       }
 
@@ -75,7 +75,7 @@ function App() {
     <>
       <div className='container mx-auto'>
         <h1 className='text-5xl font-bold text-center p-2 m-2'>Course Registration</h1>
-        <div className='flex flex-col md:flex-row justify-between items-start gap-10'>
+        <div className='flex flex-col md:flex-row justify-between items-start gap-10 mt-4'>
           <div className=' w-full md:w-3/4'>
             <Courses courses={courses} handleSelect={handleSelect} ></Courses>
           </div>
