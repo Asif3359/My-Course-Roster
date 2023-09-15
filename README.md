@@ -116,14 +116,10 @@ In the handleSelect function, you update the state based on user interactions.
 
 •	If the course selection is valid (within credit limits), it updates the following state variables:
 
-
-     •	remainingCreditHr: Decreases the remaining credit hours by subtracting the totalCredit.
-     
-     •	credit: Updates the total credits based on the new selection.
-
-     •	creditPrice: Updates the total price based on the new selection.
-
-     •	chartCourses: Adds the newly selected course to the chartCourses array.
+    •	remainingCreditHr: Decreases the remaining credit hours by subtracting the totalCredit.
+    •	credit: Updates the total credits based on the new selection.
+    •	creditPrice: Updates the total price based on the new selection.
+    •	chartCourses: Adds the newly selected course to the chartCourses array.
      
 
 
