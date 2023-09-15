@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Courses from './Components/Coursees/Courses'
 import Chart from './Components/Chartlist/Chart'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import swal from 'sweetalert';
 
 function App() {
 
@@ -11,6 +14,8 @@ function App() {
   const [chartCourses, setChartCourses]=useState([]);
   const [credit, setCredit]=useState(0);
   const [creditPrice, setCreditPrice]=useState(0);
+  const [remainingCreditHr, setRemainingCreditHr]=useState(0);
+  let remainingCredit = 20;
 
   useEffect(()=>{
 
@@ -29,20 +34,40 @@ function App() {
     const isExist = chartCourses.find( item => item.id === id);
 
     if(isExist){
-      return alert("Already Selected");
+      swal({
+        title: "Already Selected",
+        text: "You can select another course",
+        icon: "error",
+        button: "ok",
+      });
     }
     else{  
 
       chartCourses.forEach( (item) =>{
 
         totalCredit = totalCredit + item.credit_our;
-        totalPrice = totalPrice + item.Course_price 
-      });  
+        totalPrice = totalPrice + item.Course_price;
+ 
+      });
+      remainingCredit = remainingCredit - totalCredit;
+      if(remainingCredit  < 0){
+        swal({
+          title: "Already Fill your Credit hour",
+          text: "You can select after your courses finished",
+          icon: "error",
+          button: "ok",
+        });
+      }
+      else{ 
+        setCredit(totalCredit);
+        setCreditPrice(totalPrice);
+        setRemainingCreditHr(remainingCredit);
+        setChartCourses([...chartCourses,course]);
+      }
 
-      setCredit(totalCredit);
-      setCreditPrice(totalPrice);
-      setChartCourses([...chartCourses,course]);
+      
     }
+
      
   }
 
@@ -55,7 +80,7 @@ function App() {
             <Courses courses={courses} handleSelect={handleSelect} ></Courses>
           </div>
           <div className='w-full  md:w-1/4'>
-            <Chart chartCourses={chartCourses} credit={credit} creditPrice={creditPrice}></Chart>
+            <Chart chartCourses={chartCourses} credit={credit} creditPrice={creditPrice} remainingCreditHr={remainingCreditHr}  ></Chart>
           </div>
         </div>
       </div>
