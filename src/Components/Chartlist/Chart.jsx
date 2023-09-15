@@ -7,16 +7,16 @@ const Chart = ({chartCourses, credit, creditPrice, remainingCreditHr}) => {
         <div className='flex flex-col justify-between items-start'> 
             <h1 className='mb-2 font-semibold'>Credit Hour Remaining :{remainingCreditHr} hr</h1>
             <hr />
-            <div className=' my-2 pt-2 border-t-4 border-gray-400 w-full'>
+            <div className='py-3 border-t-4 border-gray-400 w-full'>
                 <h1 className=' font-semibold' >Course Name</h1>
                 {
                     chartCourses.map((chart,idx) => <ChartItem key={idx} count={idx} chart={chart}></ChartItem>)
                 }
             </div>
             <hr />
-            <h1 className='mt-2 pt-2 mb-2 border-t-4 border-gray-400 w-full'>Total Credit : {credit} hr </h1>
+            <h1 className=' py-3 border-t-4 border-gray-400 w-full'>Total Credit : {credit} hr </h1>
             <hr />
-            <h1 className='mt-2 pt-2 mb-2 border-t-4 border-gray-400 w-full'>Total Price : ${creditPrice.toFixed(2)}</h1>
+            <h1 className=' py-3 border-t-4 border-gray-400 w-full'>Total Price : ${creditPrice.toFixed(2)}</h1>
             
         </div>
     );
