@@ -15,6 +15,7 @@ function App() {
   const [credit, setCredit]=useState(0);
   const [creditPrice, setCreditPrice]=useState(0);
   const [remainingCreditHr, setRemainingCreditHr]=useState(20);
+  
   let remainingCredit = 20;
 
   useEffect(()=>{
