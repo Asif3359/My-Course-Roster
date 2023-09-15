@@ -27,21 +27,21 @@
 
 
 2. Fetching Data and Updating State:
-    use the useEffect hook to fetch data from a JSON file when the component mounts. Once the data is fetched, you update the courses state variable using setCourses(data). This ensures that your component has access to the course data.
+use the useEffect hook to fetch data from a JSON file when the component mounts. Once the data is fetched, you update the courses state variable using setCourses(data). This ensures that your component has access to the course data.
 
-    useEffect(()=>{
+useEffect(()=>{
 
-        fetch("/courses.json")
-        .then(res => res.json())
-        .then(data => setCourses(data))
-    },[]);
+    fetch("/courses.json")
+    .then(res => res.json())
+    .then(data => setCourses(data))
+  },[]);
 
 
 
 
 3. Updating State on User Interactions:
 
-    In the handleSelect function, you update the state based on user interactions.
+In the handleSelect function, you update the state based on user interactions.
 
     
     const handleSelect = (course,id) =>{
@@ -90,41 +90,41 @@
 
 
 4. The handleSelect function in your code is responsible for managing the selection of courses in your course registration application. Here's a brief explanation of how it works:
+1.	Initialization:
 
-    1.	Initialization:
+•	totalCredit and totalPrice are initialized with the values from the selected course (course.credit_our and course.Course_price, respectively).
 
-        •	totalCredit and totalPrice are initialized with the values from the selected course (course.credit_our and course.Course_price, respectively).
+•	isExist is checked to see if the selected course is already in the chartCourses array. This is done by searching for a course with the same id in the chartCourses array.
 
-        •	isExist is checked to see if the selected course is already in the chartCourses array. This is done by searching for a course with the same id in the chartCourses array.
+2.	Checking If the Course is Already Selected:
 
-    2.	Checking If the Course is Already Selected:
+•	If isExist is true, it means the course is already in the user's selected courses list. In this case, a notification (using the swal library) is shown to inform the user that they cannot select the same course again.
 
-        •	If isExist is true, it means the course is already in the user's selected courses list. In this case, a notification (using the swal library) is shown to inform the user that they cannot select the same course again.
+3.	Selecting a New Course:
 
-    3.	Selecting a New Course:
+•	If the course is not already selected (isExist is false), the code proceeds to calculate the total credits and total price of all the courses in the chartCourses array.
 
-        •	If the course is not already selected (isExist is false), the code proceeds to calculate the total credits and total price of all the courses in the chartCourses array.
+•	It loops through the chartCourses array and accumulates the credits and prices of the selected courses.
 
-        •	It loops through the chartCourses array and accumulates the credits and prices of the selected courses.
+4.	Checking Credit Limit:
 
-    4.	Checking Credit Limit:
+•	Next, it checks if adding the credits of the newly selected course (totalCredit) to the credits of the courses already in the chart (totalCredit accumulated in the loop) exceeds a credit limit (in this case, 20 credits). It also checks if the remaining credit hours (remainingCredit) fall below zero.
 
-        •	Next, it checks if adding the credits of the newly selected course (totalCredit) to the credits of the courses already in the chart (totalCredit accumulated in the loop) exceeds a credit limit (in this case, 20 credits). It also checks if the remaining credit hours (remainingCredit) fall below zero.
+•	If either condition is met (exceeding credit limit or negative remaining credits), a notification is shown to inform the user that they cannot select more courses.
 
-        •	If either condition is met (exceeding credit limit or negative remaining credits), a notification is shown to inform the user that they cannot select more courses.
+5.	Updating State:
 
-    5.	Updating State:
-
-        •	If the course selection is valid (within credit limits), it updates the following state variables:
+•	If the course selection is valid (within credit limits), it updates the following state variables:
 
 
-            •	remainingCreditHr: Decreases the remaining credit hours by subtracting the totalCredit.
-            
-            •	credit: Updates the total credits based on the new selection.
+     •	remainingCreditHr: Decreases the remaining credit hours by subtracting the totalCredit.
+     
+     •	credit: Updates the total credits based on the new selection.
 
-            •	creditPrice: Updates the total price based on the new selection.
+     •	creditPrice: Updates the total price based on the new selection.
 
-            •	chartCourses: Adds the newly selected course to the chartCourses array.
+     •	chartCourses: Adds the newly selected course to the chartCourses array.
+     
 
 
 
