@@ -1,7 +1,7 @@
 # Assignment 7
 
 # Project Feature .
- 1. SELECT YOUR REQUIRED COURSE: 
+ 1. SELECT YOUR REQUIRED COURSE:   
 -You can select courses as per your wish but your courses cannot exceed 20 credit hours.
 
  2. COURSE NAME:  
